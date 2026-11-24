@@ -1,0 +1,6 @@
+{
+  "name": "Small Business OS",
+  "description": "Digital business management platform for home-based small business owners — costing, pricing, orders, inventory, finance, and AI advisory.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

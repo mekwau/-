@@ -1,0 +1,92 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-arabic: 'Cairo', 'Plus Jakarta Sans', sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+
+    /* Light Mode Palette */
+    --canvas: #F4F7FB;
+    --surface: #FFFFFF;
+    --surface-muted: #EEF3F9;
+    --border-hairline: #DCE4F0;
+    --ink-primary: #0F172A;
+    --ink-secondary: #64748B;
+    --blueprint: #2563EB;
+    --blueprint-soft: rgba(37, 99, 235, 0.1);
+    --positive: #15803D;
+    --warning: #B45309;
+    --danger: #DC2626;
+  }
+
+  .dark {
+    /* Dark Navy & Soft Blue Palette */
+    --canvas: #0B1220;
+    --surface: #111A2E;
+    --surface-muted: #18233B;
+    --border-hairline: #23324D;
+    --ink-primary: #F8FAFC;
+    --ink-secondary: #94A3B8;
+    --blueprint: #3B82F6;
+    --blueprint-soft: rgba(59, 130, 246, 0.14);
+    --positive: #34D399;
+    --warning: #FBBF24;
+    --danger: #F87171;
+  }
+
+  html {
+    font-family: var(--font-sans);
+    background-color: var(--canvas);
+    color: var(--ink-primary);
+  }
+
+  html[dir="rtl"] {
+    font-family: var(--font-arabic);
+  }
+}
+
+.font-num {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+html[dir="rtl"] .font-num {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  direction: ltr;
+  display: inline-block;
+}
+
+input,
+select,
+textarea {
+  background-color: var(--surface-muted);
+  color: var(--ink-primary);
+  border-color: var(--border-hairline);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--ink-secondary);
+}
+
+/* Smooth custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-hairline);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ink-secondary);
+}
